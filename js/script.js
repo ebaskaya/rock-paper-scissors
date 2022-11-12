@@ -9,3 +9,12 @@ function getComputerChoice() {
 
 computerChoice = getComputerChoice();
 console.log(computerChoice);
+
+function getPLayerChoice() {
+    let playerChoice = prompt("Type your selection");
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
+}
+
+playerChoice = getPLayerChoice();
+console.log(playerChoice);
