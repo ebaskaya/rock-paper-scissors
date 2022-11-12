@@ -7,8 +7,6 @@ function getComputerChoice() {
     return computerChoices[computerChoice];
 }
 
-computerChoice = getComputerChoice();
-console.log(computerChoice);
 
 function getPLayerChoice() {
     let playerChoice = prompt("Type your selection");
@@ -16,8 +14,13 @@ function getPLayerChoice() {
     return playerChoice;
 }
 
-playerChoice = getPLayerChoice();
-console.log(playerChoice);
+// computerChoice = getComputerChoice();
+// console.log(computerChoice);
+
+
+
+// playerChoice = getPLayerChoice();
+// console.log(playerChoice);
 
 function playRound(computerChoice, playerChoice) {
     const choices = ["rock", "scissors", "paper"];
@@ -36,5 +39,16 @@ function playRound(computerChoice, playerChoice) {
     
 }
 
-result = playRound(computerChoice, playerChoice);
-console.log(result);
+function game() {
+    for (let i = 0; i < 5; i++) {
+        computerChoice = getComputerChoice();
+        
+        playerChoice = getPLayerChoice();
+        
+        result = playRound(computerChoice, playerChoice);
+        console.log(result);
+    }
+}
+
+game();
+
