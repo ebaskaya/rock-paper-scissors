@@ -27,9 +27,9 @@ function playRound(computerChoice, playerChoice) {
         return "It's a tie!";
     }
     else if(choices[(choices.indexOf(playerChoice) + 1) % 3] === computerChoice) {
-        return "You win!";
+        return `You win! ${playerChoice} beats ${computerChoice}.`;
     }
-    else return "You lose!";
+    else return `You lose! ${playerChoice} loses to ${computerChoice}.`;
     
     
     
