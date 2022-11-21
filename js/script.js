@@ -1,4 +1,6 @@
+const buttons = document.querySelectorAll('.choice');
 
+buttons.forEach(button => button.addEventListener('click', getPLayerChoice));
 
 
 function getComputerChoice() {
@@ -8,10 +10,10 @@ function getComputerChoice() {
 }
 
 
-function getPLayerChoice() {
-    let playerChoice = prompt("Type your selection");
-    playerChoice = playerChoice.toLowerCase();
-    return playerChoice;
+function getPLayerChoice(e) {
+    console.log(this.getAttribute('data-choice'));
+    console.log(e);
+    
 }
 
 function playRound(computerChoice, playerChoice) {
