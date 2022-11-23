@@ -1,24 +1,25 @@
 const buttons = document.querySelectorAll('.choice');
+const result = document.createElement('div');
+document.body.appendChild(result);
 
-buttons.forEach(button => button.addEventListener('click', getPLayerChoice));
-
-
-function getComputerChoice() {
-    const computerChoices = ["Rock", "Paper", "Scissors"];
-    let computerChoice = Math.floor(Math.random() * 3);
-    return computerChoices[computerChoice];
-}
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 
-function getPLayerChoice(e) {
-    console.log(this.getAttribute('data-choice'));
-    console.log(e);
+function getComputerChoice(choices) {
     
+    let computerChoice = Math.floor(Math.random() * 3);
+    return choices[computerChoice];
 }
 
-function playRound(computerChoice, playerChoice) {
-    const choices = ["rock", "scissors", "paper"];
-    computerChoice = computerChoice.toLowerCase();
+
+
+
+function playRound() {
+    const choices = ["Rock", "Scissors", "Paper"];
+    playerChoice = this.textContent; //button's text content
+    computerChoice = getComputerChoice(choices);
+    console.log(playerChoice);
+    console.log(computerChoice);
     
     if(playerChoice === computerChoice) {
         return 0; 
